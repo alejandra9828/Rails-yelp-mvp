@@ -8,6 +8,7 @@ class RestaurantsController < ApplicationController
 
   # GET /restaurants/1 or /restaurants/1.json
   def show
+    @review = Review.new
   end
 
   # GET /restaurants/new
@@ -17,6 +18,10 @@ class RestaurantsController < ApplicationController
 
   # GET /restaurants/1/edit
   def edit
+  end
+
+  def top
+    @restaurants = Restaurant.where(category:"a")
   end
 
   # POST /restaurants or /restaurants.json
